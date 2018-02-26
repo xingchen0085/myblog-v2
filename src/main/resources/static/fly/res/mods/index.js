@@ -608,7 +608,7 @@ layui.define(['layer', 'laytpl', 'form', 'element', 'upload', 'util'], function(
   
   //固定Bar
   util.fixbar({
-    bar1: '&#xe642;'
+    bar1: false
     ,bgcolor: '#009688'
     ,click: function(type){
       if(type === 'bar1'){
