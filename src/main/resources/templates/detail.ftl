@@ -154,7 +154,7 @@
                         <!--<span class="layui-btn layui-btn-xs jie-admin" type="edit"><a href="add.html">编辑</a></span>-->
                     </div>
                 </div>
-                <div class="detail-body photos">
+                <div class="detail-body photos" id="detail_body">
                     <p>
                         该模版由 layui官方社区（<a href="http://fly.layui.com/" target="_blank">fly.layui.com</a>）倾情提供，只为表明我们对
                         layui 执着的信念、以及对未来持续加强的承诺。该模版基于 layui 搭建而成，可作为极简通用型社区的页面支撑。
@@ -178,8 +178,6 @@
                     封面
                     <hr>
 
-                    <!--<iframe src="https://xingchen0085.github.io/index.html" id="iframepage" scrolling="no"
-                            onload="changeFrameHeight()" frameborder="0"></iframe>-->
 
                 </div>
             </div>
@@ -399,24 +397,25 @@
     </p>
 </div>
 
-<script src="../../res/layui/layui.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/fly/res/layui/layui.js"></script>
 <script>
     layui.cache.page = 'jie';
     layui.cache.user = {
         username: '游客'
         , uid: -1
-        , avatar: '../../res/images/avatar/00.jpg'
+        , avatar: '/fly/res/images/avatar/00.jpg'
         , experience: 83
         , sex: '男'
     };
     layui.config({
         version: "3.0.0"
-        , base: '../../res/mods/'
+        , base: '/fly/res/mods/'
     }).extend({
         fly: 'index'
     }).use(['fly', 'face'], function () {
         var $ = layui.$
-            , fly = layui.fly;
+                , fly = layui.fly;
         //如果你是采用模版自带的编辑器，你需要开启以下语句来解析。
         /*
         $('.detail-body').each(function(){
@@ -425,18 +424,17 @@
         });
         */
     });
-</script>
 
-<script type="text/javascript">
-    function changeFrameHeight() {
-        var ifm = document.getElementById("iframepage");
-        ifm.height = document.documentElement.clientHeight;
 
-    }
-    window.onresize = function () {
-        changeFrameHeight();
+    $.ajax({
+        url: "/blog/content?sysyUrl=1",
+        dataType: "text",
+        type: "get",
+        success: function (rtn) {
+            $("#detail_body").append(rtn);
+        }
+    });
 
-    }
 </script>
 
 </body>

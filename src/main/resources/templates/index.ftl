@@ -99,7 +99,7 @@
                     <div class="fly-panel">
                         <div class="fly-panel-title">
                             <h3>
-                                <a href="${blog.url}">${blog.title}</a>
+                                <a href="/blog/${blog.url}">${blog.title}</a>
                                 <span class="layui-badge layui-bg-black" style="float: right;margin: 15px">置顶</span>
                             </h3>
                         </div>
@@ -134,7 +134,7 @@
                     <div class="laypage-main"><span class="laypage-curr">1</span><a href="/blog/pe/2/">2</a><a
                             href="/blog/pe/3/">3</a><a href="/blog/pe/4/">4</a><a
                             href="/blog/pe/5/">5</a><span>…</span><a href="/blog/pe/148/" class="laypage-last"
-                                                                      title="尾页">尾页</a><a
+                                                                     title="尾页">尾页</a><a
                             href="/blog/pe/2/" class="laypage-next">下一页</a></div>
                 </div>
             </div>

@@ -64,8 +64,9 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public String getBlogContent(String sysyUrl) {
-        String pre = "https://www.myxinge.cn/";
-        return HttpClientUtil.get(pre + sysyUrl);
+//        String pre = "https://www.myxinge.cn/";
+//        return HttpClientUtil.get(pre + sysyUrl);
+        return HttpClientUtil.get("https://xingchen0085.github.io/index.html");
     }
 
     @Override
