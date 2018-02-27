@@ -429,6 +429,7 @@
     $.ajax({
         url: "/blog/content?sysyUrl=1",
         dataType: "text",
+
         type: "get",
         success: function (rtn) {
             $("#detail_body").append(rtn);
